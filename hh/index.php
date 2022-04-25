@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 
 <html lang="en" class="default-theme">
   <head>
@@ -237,29 +237,28 @@
           $run = mysqli_query($db, $q);
 
             while($rec = mysqli_fetch_array($run)) {
-echo '<div class="content">';
-              echo  '<img src="'.$rec['photo'].'" alt="Car" style="width:100%"><hr>';
-              echo      '<p class="table-name">'.$rec["name"].' </p>';
-                echo ' <h2> Rating:</h2>';
-    echo ' <span class="fa fa-star checked"></span>';
-    echo  '<span class="fa fa-star checked"></span>';
-  echo    '<span class="fa fa-star checked"></span>';
-    echo  '<span class="fa fa-star"></span>';
-  echo   ' <span class="fa fa-star"></span>';
 
-
-      echo        '    <p class="table-loc">LOCATION:'.$rec['loc'].'</p><br>';
-              echo   ' <button class="BOOK" onclick="window.location.href="gym_information.php?id='.$rec[id].'>';
-          echo     '  view details  </button>';
-echo '</div>';
-
-        }?>
+echo
+'<div class="content">
+<form method ="get">
+            <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+            <p class="table-name">'.$rec["name"].' </p>
+                 <h2> Rating:</h2>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+      <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+<a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+            </form>
+</div>';}
+?>
 </div>
         <!-- END GRID -->
         </div>
 
         <!-- END MAIN -->
-        </div>
 
         <script>
           filterSelection("all")
