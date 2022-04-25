@@ -1,0 +1,58 @@
+/* CSS Document */
+body {
+	font-size: 22px;
+	background: url("imgs/back7.jpg");
+	background-size: cover;
+}
+#content {
+	width: 990px;
+	max-width: 990px;
+	min-height: 570px;
+	background: #C4C2C2;
+	margin: 100px auto;
+	border-radius: 20px;
+	overflow: hidden
+}
+
+
+
+#logo {
+	width:100px;
+	height: 100px;
+	border-radius: 20px;
+}
+
+h1 {
+	color: #696969;
+	font-size: 35px;
+	margin-top: 15px;
+}
+h2 {
+	color: #696969;
+}
+#loginButton {
+	background: #A9A9A9;
+	line-height: 30px;
+	padding: 20px 40px;
+	font-size: 24px;
+	color: white;
+	text-decoration: none;
+	border-radius: 10px;
+}
+#signupButton {
+	background: #A9A9A9;
+	line-height: 30px;
+	padding:20px 40px;
+	font-size: 24px;
+	color: white;
+	text-decoration: none;
+	border-radius: 10px;
+}
+
+input[type=text], select, textarea, input[type=file], input[type=password] {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+

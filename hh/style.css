@@ -1,0 +1,512 @@
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+  font-size: 16px;
+  text-decoration: none;
+}
+/* ******** about us ***** */
+.container{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+  background:url(images/back88.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about{
+  font-family: Copperplate Gothic Light;
+  margin-bottom: 100px;
+  color: #000;
+  font-size: 55px;
+}
+.left{
+	flex-basis: 60%;
+}
+.right{
+	flex-basis: 50%;
+	max-width: 400px;
+}
+.right h1{
+	color: #9345B8;
+	font-size: 30px;
+}
+.right p{
+	font-size: 25px;
+	margin:10px 0px;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+  
+  padding: 10px;
+  background-color: var(--bg-color-4);
+}
+
+body {
+  background: url("images/back7.jpg");
+  
+}
+
+main {
+  padding: 20px;
+  
+}
+
+.heading-s {
+  text-align: center;
+  font-size: 4rem;
+  padding: 1rem;
+  color: #666;
+}
+
+.heading-s span {
+  font-size: 4rem;
+  color: #8c8f84;
+}
+.pre_h pre { 
+  font-size: 1.2rem;
+  color: var(--bg-color-3); 
+}
+  
+
+header {
+  display: flex;
+  font-size: 1em;
+  flex-wrap: wrap;
+}
+
+header img {
+  float: left;
+  width: 180px;
+  height: 180px;
+  border: none;
+  background-color: revert;
+}
+
+nav {
+  display: flex;
+  
+  font-size: 1em;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+nav.topnav {
+  overflow: hidden;
+  
+}
+
+nav .links {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  
+}
+
+nav.topnav a {
+  color: #9345B8;
+  padding: 14px 16px;
+  
+}
+
+nav.topnav a:hover {
+  background-color: #737373;
+  color: white;
+}
+
+
+
+
+
+
+.nameOfRes {
+  position: relative;
+}
+
+.nameOfRes img {
+  opacity: 0.5;
+  background-color: #000;
+  width: 100%;
+  padding: 0;
+}
+
+.centered {
+  font-size: 5em;
+  color: var(--bg-color-4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  height: auto;
+  width: 100vw;
+  padding-top: 40px;
+  color: #fff;
+  
+}
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+}
+.socials{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+  margin: 0 10px;
+}
+
+.socials a{
+  text-decoration: none;
+  color: #fff;
+  border: 1.1px solid white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.socials a i{
+  font-size: 1.1rem;
+  width: 20px;
+  transition: color .4s ease;
+}
+
+.socials a:hover i{
+  color: aqua;
+}
+.footer-bottom{
+  background: #000;
+  width: 100vw;
+  padding: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+.footer-bottom p{
+  float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom p a{
+ color:#44bae8;
+ font-size: 16px;
+ text-decoration: none;
+}
+.footer-bottom span{
+   text-transform: uppercase;
+   opacity: .4;
+   font-weight: 200;
+}
+
+button {
+  float: right;
+  background: #b9bcb5;
+  color: var(--bg-color-4);
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  position: relative;
+  padding: 7px;
+  font-family: sans-serif;
+  border: none;
+  font-size: 1em;
+}
+
+.ourstory {
+  /*position: absolute;*/
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ourstory .row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.col-33 {
+  width: 33%;
+}
+
+.col-66 {
+  width: 66%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.ourstory h1 {
+  color: #b2936c;
+  font-size: 3.6em;
+  font-family: "Lucida Handwriting", cursive;
+}
+
+.ourstory p {
+  color: #77674a;
+  font-size: 1.5em;
+  font-family: "Copperplate", fantasy;
+}
+
+.loc {
+  font-size: 1.5rem;
+
+  color: var(--bg-color-4);
+  background-color: var(--bg-color-2);
+  padding: 35px;
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+
+
+/*FIND*/
+/*
+.res-pic .box-container1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 1.5rem;
+  
+}
+
+.res-pic .box-container1 .table-picture {
+  padding: 2.5rem;
+  background: #d9d9d9;
+  border-radius: 0.5rem;
+  border: 0.2rem solid  #6D089D;;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin: 10px;
+}
+
+.res-pic .box-container1 .table-picture img {
+  height: 15rem;
+  width: 15rem;
+  margin: 1rem 0;
+
+  }
+*/
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+#myBtnContainer{
+  display: flex;
+  background-color: #d9d9d9;
+  font-size: 1em;
+  flex-wrap: wrap;
+  width: 100%;
+
+}
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 45%;
+  display: none; /* Hide all elements by default */
+  
+
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  
+  padding: 10px;
+  padding: 2.5rem;
+  background: #d9d9d9;
+  border-radius: 0.5rem;
+  border: 0.2rem solid  #6D089D;;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  margin: 10px;
+}
+
+.row .column .content img{
+  height: 15rem;
+  width: 15rem;
+  margin: 1rem 0;
+}
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #c4c2c2;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color:  #672E82;
+  color: white;
+}
+
+.BOOK {
+  background-color: #B680CF;
+  border: none;
+  color: #B680CF;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  position: relative;
+  float: left ;
+}
+.BOOK1 {
+  background-color: #B680CF;
+  border: none;
+  color: var(--bg-color-4);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  position: relative;
+}
+
+button.BOOK {
+  border: 1px solid #000;
+  background-color: #672E82;
+  color: #ffffff;
+}
+
+button.BOOK:hover {
+  border: 1px solid #000;
+  background-color: #c4c2c2;
+  color: #ffffff;
+}
+button.sort{
+  
+  padding: 12px 16px;
+  margin-left: 510px;
+  cursor: pointer;
+  border: 1px solid #000;
+  background-color: #672E82;
+  color: #ffffff;
+
+}
+button.sort:hover {
+  border: 1px solid #000;
+  background-color: #c4c2c2;
+  color: #ffffff;
+}
+
+
+
+
+button.BOOK:disabled,
+button.BOOK[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: auto;
+}
+
+@media all and (max-width: 980px) {
+  * {
+    font-size: 12px;
+  }
+  nav {
+    justify-content: center;
+  }
+
+  .search-form {
+    display: none;
+  }
+
+  nav .links {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav .links a {
+    width: 100%;
+    margin-left: 0px;
+    font-size: 1.2em;
+    padding: 5px;
+  }
+
+  header .logo {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .centered {
+    font-size: 3em;
+  }
+
+  .ourstory .row .col {
+    width: 100%;
+  }
+  
+}

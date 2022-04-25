@@ -1,0 +1,862 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finess website</title>
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <!--for replay icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                    slidesPerGroup: 3,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                    slidesPerGroup: 1,
+                },
+                600: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    slidesPerGroup: 1,
+                },
+                400: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    slidesPerGroup: 1,
+                },
+
+            }
+        });</script>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;1,100&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+        :root {
+            --redclr: #F92524;
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            transition: all .2s linear;
+            text-transform: capitalize;
+            font-size: 16px;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: url("images/back7.jpg");
+        }
+
+        .home {
+            padding: 2rem 7%;
+        }
+
+        .main-home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .inner-home {
+            flex: 1 1 45rem;
+        }
+
+            .inner-home img {
+                width: 100%;
+            }
+
+        .home-content h2 {
+            font-size: 30px;
+            font-weight: lighter;
+        }
+
+        .home-content h1 {
+            font-size: 35px;
+        }
+
+            .home-content h1 span {
+                color: #9345B8;
+                margin: 1rem 0;
+            }
+
+        .home-content p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .home-content a {
+            padding: 1.5rem 3rem;
+            background: var(--redclr);
+            color: white;
+            font-size: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .our-class {
+            background: url(images/classbackground.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            padding: 4rem 7%;
+        }
+
+            .our-class h1 {
+                font-size: 40px;
+                color: #9345B8;
+                text-align: center;
+                margin-bottom: 25px;
+            }
+
+        .swiper-slide img {
+            width: 100%;
+        }
+
+        .swiper-slide {
+            position: relative;
+        }
+
+            .swiper-slide:hover {
+                transform: translateY(-20px);
+            }
+
+            .swiper-slide h2 {
+                position: absolute;
+                bottom: 0;
+                color: white;
+                background: #9345B8;
+                width: 100%;
+                padding: 1.5rem 0;
+                font-size: 20px;
+                text-align: center;
+            }
+
+        .our-story {
+            padding: 3rem 7%;
+            background: url(images/storybackground2.png);
+            width: 100%;
+            background-position: left;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+            .our-story h1 {
+                color: #9345B8;
+                text-align: center;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+
+        .ourstory-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .ourstory-inner {
+            flex: 1 1 45rem;
+        }
+
+            .ourstory-inner .story-front {
+                width: 100%;
+            }
+
+            .ourstory-inner h2 {
+                color: var(--redclr);
+                font-size: 2rem;
+            }
+
+        .top-story-content {
+            padding: 2rem .5rem;
+        }
+
+            .top-story-content p {
+                font-size: 1.5rem;
+                padding: 1.5rem 0;
+            }
+
+        .story-content {
+            margin-left: 20px;
+        }
+
+        .our-trainers {
+            padding: 3rem 7%;
+        }
+
+            .our-trainers h1 {
+                color: #9345B8;
+                font-size: 40px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+        .main-trainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        .inner-trainer {
+            flex: 1 1 300px;
+        }
+
+            .inner-trainer img {
+                width: 100%;
+                transform: scale(1);
+            }
+
+                .inner-trainer img:hover {
+                    transform: translateY(-20px);
+                }
+
+        .trainer-content {
+            padding: 0 2rem;
+        }
+
+            .trainer-content h2 {
+                color: #9345B8;
+                font-size: 30px;
+                margin-bottom: 5px;
+            }
+
+            .trainer-content span {
+                color: black;
+                font-size: 1.5rem;
+                padding: 15px 0;
+            }
+
+            .trainer-content hr {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .trainer-content p {
+                font-size: 1.5rem;
+            }
+
+        .social-icons i {
+            font-size: 2rem;
+            color: black;
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+            .social-icons i:hover {
+                color: var(--redclr);
+                cursor: pointer;
+                transform: rotate(360deg) scale(2);
+            }
+
+        .customer-review {
+            padding: 5rem 7%;
+        }
+
+            .customer-review h1 {
+                color: #9345B8;
+                font-size: 40px;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+        .main-customer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .inner-customer {
+            flex: 1 1 300px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 3rem 1rem;
+            position: relative;
+        }
+
+            .inner-customer:hover {
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            }
+
+            .inner-customer img {
+                position: absolute;
+                top: -15%;
+                width: 70px;
+            }
+
+        .review-icons {
+            padding: 1rem 0;
+            margin-top: 15px;
+        }
+
+        .main-customer {
+            background: #ffffff;
+        }
+
+
+
+        .review-icons i {
+            color: yellow;
+            font-size: 18px;
+        }
+
+        .inner-customer p {
+            font-size: 1.5rem;
+            padding: 1.5rem .5rem;
+        }
+
+
+
+
+
+
+
+
+
+        @media (max-width:991px) {
+            .home {
+                margin-top: 70px;
+            }
+        }
+
+
+        @media (max-width:767px) {
+            html {
+                font-size: 50%;
+            }
+
+
+            .home {
+                margin-top: 70px;
+            }
+
+            .story-content h2 {
+                color: black;
+            }
+
+            .top-story-content p {
+                padding: 0 2rem;
+            }
+
+            .inner-customer {
+                margin-top: 15px;
+                padding: 4rem 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-------header ------>
+    <header>
+
+        <style>
+
+            header {
+                display: flex;
+                font-size: 1em;
+                flex-wrap: wrap;
+            }
+
+            img {
+                width: 100%;
+                padding: 10px;
+                background-color: var(--bg-color-4);
+            }
+
+            header img {
+                float: left;
+                width: 180px;
+                height: 180px;
+                border: none;
+                background-color: revert;
+            }
+
+            nav {
+                display: flex;
+                font-size: 1em;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+                nav.topnav {
+                    overflow: hidden;
+                    background: url("images/back7.jpg");
+                }
+
+                nav .links {
+                    display: flex;
+                    align-items: center;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    flex-wrap: wrap;
+                }
+
+                nav.topnav a {
+                    color: #9345B8;
+                    padding: 14px 16px;
+                }
+
+                    nav.topnav a:hover {
+                        background-color: #737373;
+                        color: white;
+                    }
+
+
+
+
+            .search-form {
+                margin-top: 8px;
+                margin-left: auto;
+                margin-right: 20px;
+            }
+
+
+            input[type="text"] {
+                padding: 7px;
+                border: none;
+                font-size: 1em;
+                font-family: sans-serif;
+            }
+        </style>
+        <nav class="topnav">
+
+            <img class="logo"
+                 src="images/logo3.png"
+                 alt="restaurants logo" />
+            <div class="links">
+                <a href="index.html">HOME</a>
+                <a href="menu.html">About-US</a>
+                <a href="menu.html">Contact-Us</a>
+            </div>
+            <form class="search-form">
+                <input type="text" placeholder="Search.." />
+                <button>search</button>
+            </form>
+        </nav>
+    </header>
+
+
+    <!-- home section -->
+
+    <div class="home">
+        <div class="main-home">
+            <div class="inner-home">
+                <div class="home-content">
+                    <h2>overview</h2>
+                    <h2>build your body &</h2>
+                    <h1>shape <span>yourself</span> </h1>
+                    <p>
+                        Al Manahil Entertainment Co. is one of the leading company in Beauty, Fitness and Sports sectors in Riyadh. Our aim is to offer best services to all women located at one place.
+                        <br />
+                        Al Manahil Entertainment Co. is a NON-PROFIT company outlined with its distinct support of Princess Madawi Fund for Women Entrepreneurship Development "Deem Al Manahil".
+
+                        </br> call us: 011 488 1069
+                    </p>
+                    <a href="https://www.almanahil.com.sa">subscribe</a>
+                </div>
+
+            </div>
+            <div class="inner-home">
+                <img src="images/manahil.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="our-class">
+        <h1>classes</h1>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/class1.png" alt="">
+                    <h2>body building</h2>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/class2.png" alt="">
+                    <h2>swimming</h2>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/class4.png" alt="">
+                    <h2>boxing</h2>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/class2.png" alt="">
+                    <h2>swimming</h2>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/class1.png" alt="">
+                    <h2>body building</h2>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/class4.png" alt="">
+                    <h2>boxing</h2>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/class1.png" alt="">
+                    <h2>body building</h2>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/class2.png" alt="">
+                    <h2>swimming</h2>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/class4.png" alt="">
+                    <h2>boxing</h2>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <!-- our stories GOOGLE MAP-->
+    <div class="our-story">
+        <h1>gym location</h1>
+        <div class="ourstory-main">
+            <div class="ourstory-inner">
+                <img class="story-front" src="images/storyfront.png" alt="">
+            </div>
+
+            <div class="ourstory-inner">
+                <div class="top-story-content">
+                    <h2>address</h2>
+                    <p>
+                        Ibn Zahr Street، Al Safarat، Diplomatic Square، Riyadh
+                    </p>                </div>
+
+                <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=%D9%85%D8%B1%D9%83%D8%B2%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%87%D9%84&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/">divi discount</a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 500px;
+                        width: 600px;
+                    }
+                </style><a href="https://www.embedgooglemap.net">google maps iframe embed</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 500px;
+                        width: 600px;
+                    }
+                </style></div></div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- our trainers -->
+    <div class="our-trainers">
+        <h1>our trainers</h1>
+
+        <div class="main-trainer">
+            <div class="inner-trainer">
+                <img src="images/train1.png" alt="">
+            </div>
+
+            <div class="inner-trainer">
+                <div class="trainer-content">
+                    <h2>Trainers</h2>
+                    <span>our builders</span>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolorem ipsum odio minima iste enim quibusdam error vero quia voluptate accusamus cupiditate, mollitia, dolorum est deleniti nihil fugit ipsam expedita?</p>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-google-plus-g"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inner-trainer">
+                <img src="images/train2.png" alt="">
+            </div>
+
+            <div class="inner-trainer">
+                <div class="trainer-content">
+                    <h2>Trainers</h2>
+                    <span>our builders</span>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolorem ipsum odio minima iste enim quibusdam error vero quia voluptate accusamus cupiditate, mollitia, dolorum est deleniti nihil fugit ipsam expedita?</p>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-google-plus-g"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-trainer">
+                <img src="images/train3.png" alt="">
+            </div>
+            <div class="inner-trainer">
+                <div class="trainer-content">
+                    <h2>Trainers</h2>
+                    <span>our builders</span>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dolorem ipsum odio minima iste enim quibusdam error vero quia voluptate accusamus cupiditate, mollitia, dolorum est deleniti nihil fugit ipsam expedita?</p>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-google-plus-g"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- adding reviews -->
+    <style>
+
+        .well {
+            min-height: 20px;
+            padding: 40px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            background-color: #f5f5f5;
+            border: 1px solid #e3e3e3;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        }
+
+
+        .col-md-3 {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        .col-md-6 {
+            flex: 1 1 300px;
+        }
+
+        .col-md-3, .col-md-4, .col-md-6 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .btn-success {
+            padding: 1.5rem 3rem;
+            background: green;
+            color: white;
+            font-size: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .text-primary {
+            color: #9345B8;
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <div id="add-reviews">
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6 well">
+            <center>
+                <h1 class="text-primary">write your review </h1>
+                <hr style="border-top:1px dotted #ccc;" />
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Username:</label>
+                        <input type="text" id="user" class="form-control" />
+                    </div>
+                    <div>
+                        <h3>Rate:</h3>
+
+                        <span id="1" style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
+                        <span id="2" style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
+                        <span id="3" style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
+                        <span id="4" style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
+                        <span id="5" style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <h3>Review:</h3>
+                        <textarea id="review" class="form-control" style="resize:none; height:120px; width:50%;"></textarea>
+                    </div>
+                    <center><button class="btn-success" onclick="submitRate()">Submit</button></center>
+                </div>
+            </center>
+            <div class="col-md-6">
+                <div id="result"></div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+
+    </div>
+    <br>
+    <!-- reviews -->
+    <div class="customer-review">
+        <h1>reviews</h1>
+
+        <div class="main-customer">
+            <div class="inner-customer">
+                <img src="images/review1.png" alt="">
+                <div class="review-icons">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>boxing classes are the best also the gym is clean and good</p>
+                <a href="#add-reviews"> <i style="font-size:24px" class="fa">&#xf112;</i></a>
+
+            </div>
+
+            <div class="inner-customer">
+                <img src="images/review1.png" alt="">
+                <div class="review-icons">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>classes are fun</p>
+                <a href="#add-reviews"> <i style="font-size:24px" class="fa">&#xf112;</i></a>
+            </div>
+
+            <div class="inner-customer">
+                <img src="images/review1.png" alt="">
+                <div class="review-icons">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+
+                </div>
+                <p>professional</p>
+                <a href="#add-reviews"> <i style="font-size:24px" class="fa">&#xf112;</i></a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                    slidesPerGroup: 3,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                    slidesPerGroup: 1,
+                },
+                600: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    slidesPerGroup: 1,
+                },
+                400: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    slidesPerGroup: 1,
+                },
+
+            }
+        });</script>
+
+
+</body>
+</ht
