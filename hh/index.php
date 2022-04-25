@@ -51,10 +51,7 @@
       .prev:hover, .next:hover {
         background-color: rgba(0,0,0,0.8);
       }
-.container-content {
-  background-color: "black";
-  display: flex;
-}
+
       /* Caption text */
       .text {
         color: #f2f2f2;
@@ -225,7 +222,7 @@
 
 
 
-<div class="container-content">
+<div class="row">
             <?php
             global $db;
           	$server = 'localhost';
@@ -250,8 +247,9 @@ echo '<div class="content">';
     echo  '<span class="fa fa-star"></span>';
   echo   ' <span class="fa fa-star"></span>';
 
+
       echo        '    <p class="table-loc">LOCATION:'.$rec['loc'].'</p><br>';
-              echo   ' <button class="BOOK"onclick="window.location.href="gym_information.php?id='.$rec[id].'>';
+              echo   ' <button class="BOOK" onclick="window.location.href="gym_information.php?id='.$rec[id].'>';
           echo     '  view details  </button>';
 echo '</div>';
 
