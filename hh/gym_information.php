@@ -1001,7 +1001,7 @@ while ($row=mysqli_fetch_array($run)) {
 	        		<textarea name="user_review" id="user_review" class="form-control" placeholder="Type Review Here"></textarea>
 	        	</div>
 	        	<div class="form-group text-center mt-4">
-	        		<button type="button" class="btn btn-primary" id="save_review">Submit</button>
+	        		<button type="button" class="btn btn-primary" id="save_review">Submit<?php review_ratings($_GET['id']);?></button>
 	        	</div>
 	      	</div>
     	</div>
