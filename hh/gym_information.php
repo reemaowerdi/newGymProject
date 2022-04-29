@@ -1,4 +1,6 @@
-<?php require("connection.php") ?>
+<?php
+require("connection.php");
+require("submit_rating.php") ?>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -471,7 +473,7 @@
 
 
             <div class="links">
-              <a href="home.html">HOME</a>
+              <a href="index.php">HOME</a>
 
               <a href="#footer">Contact-Us</a>
             </div>
@@ -733,7 +735,7 @@ while ($row=mysqli_fetch_array($run)) {
       </div>
     </div>
   </div>
-  <div class="mt-5" id="review_content"></div>
+  <div class="mt-5" id="review_content" ></div>
   </div>
 
 
