@@ -653,55 +653,8 @@
         </div>
     </div>
 
-    <!-- adding reviews -->
-    <style>
-
-        .well {
-            min-height: 20px;
-            padding: 40px;
-            margin-bottom: 20px;
-            margin-top:40px;
-            background-color: #f5f5f5;
-            border: 1px solid #e3e3e3;
-            border-radius: 4px;
-            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-        }
 
 
-        .col-md-3 {
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0;
-        }
-        .col-md-6 {
-            flex: 1 1 300px;
-        }
-
-        .col-md-3, .col-md-4, .col-md-6 {
-            position: relative;
-            min-height: 1px;
-            padding-right: 15px;
-            padding-left: 15px;
-        }
-        .btn-success {
-            padding: 1.5rem 3rem;
-            background:green;
-            color: white;
-            font-size: 1.5rem;
-            border-radius: 15px;
-        }
-        .text-primary {
-            color: #9345B8;
-            font-size: 40px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-
-
-    </style>
     <!--review-->
   <script src="script.js"></script>
     <div class="container">
@@ -781,31 +734,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>var swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
             spaceBetween: 30,

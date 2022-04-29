@@ -12,6 +12,12 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!--for review -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <script>var swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -655,144 +661,82 @@ while ($row=mysqli_fetch_array($run)) {
         </div>
     </div>
 
-    <!-- adding reviews -->
-    <style>
-
-        .well {
-            min-height: 20px;
-            padding: 40px;
-            margin-bottom: 20px;
-            margin-top: 40px;
-            background-color: #f5f5f5;
-            border: 1px solid #e3e3e3;
-            border-radius: 4px;
-            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-        }
 
 
-        .col-md-3 {
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0;
-        }
-
-        .col-md-6 {
-            flex: 1 1 300px;
-        }
-
-        .col-md-3, .col-md-4, .col-md-6 {
-            position: relative;
-            min-height: 1px;
-            padding-right: 15px;
-            padding-left: 15px;
-        }
-
-        .btn-success {
-            padding: 1.5rem 3rem;
-            background: green;
-            color: white;
-            font-size: 1.5rem;
-            border-radius: 15px;
-        }
-
-        .text-primary {
-            color: #9345B8;
-            font-size: 40px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
-
-    <div id="add-reviews">
-        <div class="col-md-3"></div>
-
-        <div class="col-md-6 well">
-            <center>
-                <h1 class="text-primary">write your review </h1>
-                <hr style="border-top:1px dotted #ccc;" />
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Username:</label>
-                        <input type="text" id="user" class="form-control" />
-                    </div>
-                    <div>
-                        <h3>Rate:</h3>
-
-                        <span id="1" style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
-                        <span id="2" style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
-                        <span id="3" style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
-                        <span id="4" style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
-                        <span id="5" style="font-size:30px; cursor:pointer;" class="fa fa-star" onmouseover="startRating(this)" startRating="starmark(this)"></span>
-                    </div>
-                    <br />
-                    <div class="form-group">
-                        <h3>Review:</h3>
-                        <textarea id="review" class="form-control" style="resize:none; height:120px; width:50%;"></textarea>
-                    </div>
-                    <center><button class="btn-success" onclick="submitRate()">Submit</button></center>
-                </div>
-            </center>
-            <div class="col-md-6">
-                <div id="result"></div>
-            </div>
+    <!--review-->
+  <script src="script.js"></script>
+    <div class="container">
+  <h1 class="mt-5 mb-5">Reviews</h1>
+  <div class="card">
+    <div class="card-header">write and rate the gym</div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4 text-center">
+          <h1 class="text-warning mt-4 mb-4">
+            <b><span id="average_rating">0.0</span> / 5</b>
+          </h1>
+          <div class="mb-3">
+            <i class="fas fa-star star-light mr-1 main_star"></i>
+                        <i class="fas fa-star star-light mr-1 main_star"></i>
+                        <i class="fas fa-star star-light mr-1 main_star"></i>
+                        <i class="fas fa-star star-light mr-1 main_star"></i>
+                        <i class="fas fa-star star-light mr-1 main_star"></i>
+          </div>
+          <h3><span id="total_review">0</span> Review</h3>
         </div>
-        <script src="script.js"></script>
+        <div class="col-sm-4">
+          <p>
+                        <div class="progress-label-left"><b>5</b> <i class="fas fa-star text-warning"></i></div>
 
-    </div>
-    <br>
-    <!-- reviews -->
-    <div class="customer-review">
-        <h1>reviews</h1>
+                        <div class="progress-label-right">(<span id="total_five_star_review">0</span>)</div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="five_star_progress"></div>
+                        </div>
+                    </p>
+          <p>
+                        <div class="progress-label-left"><b>4</b> <i class="fas fa-star text-warning"></i></div>
 
-        <div class="main-customer">
-            <div class="inner-customer">
-                <img src="images/review1.png" alt="">
-                <div class="review-icons">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>best staff nice service</p>
-                <a href="#add-reviews"> <i style="font-size:24px" class="fa">&#xf112;</i></a>
+                        <div class="progress-label-right">(<span id="total_four_star_review">0</span>)</div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="four_star_progress"></div>
+                        </div>
+                    </p>
+          <p>
+                        <div class="progress-label-left"><b>3</b> <i class="fas fa-star text-warning"></i></div>
 
-            </div>
+                        <div class="progress-label-right">(<span id="total_three_star_review">0</span>)</div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="three_star_progress"></div>
+                        </div>
+                    </p>
+          <p>
+                        <div class="progress-label-left"><b>2</b> <i class="fas fa-star text-warning"></i></div>
 
-            <div class="inner-customer">
-                <img src="images/review1.png" alt="">
-                <div class="review-icons">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>swimming classes are the best also the gym is clean and good</p>
+                        <div class="progress-label-right">(<span id="total_two_star_review">0</span>)</div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="two_star_progress"></div>
+                        </div>
+                    </p>
+          <p>
+                        <div class="progress-label-left"><b>1</b> <i class="fas fa-star text-warning"></i></div>
 
-                <a href="#add-reviews"> <i style="font-size:24px" class="fa">&#xf112;</i></a>
-            </div>
-
-            <div class="inner-customer">
-                <img src="images/review1.png" alt="">
-                <div class="review-icons">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-
-                </div>
-                <p>professional</p>
-                <a href="#add-reviews"> <i style="font-size:24px" class="fa">&#xf112;</i></a>
-
-            </div>
+                        <div class="progress-label-right">(<span id="total_one_star_review">0</span>)</div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="one_star_progress"></div>
+                        </div>
+                    </p>
         </div>
+        <div class="col-sm-4 text-center">
+          <h3 class="mt-4 mb-3">Write Review Here</h3>
+          <button type="button" name="add_review" id="add_review" class="btn btn-primary">Review</button>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="mt-5" id="review_content"></div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>var swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
@@ -1028,3 +972,55 @@ while ($row=mysqli_fetch_array($run)) {
 
 </body>
 </html>
+
+<!--new code review-->
+
+<div id="review_modal" class="modal" tabindex="-1" role="dialog">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+	      	<div class="modal-header">
+	        	<h5 class="modal-title">Submit Review</h5>
+	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          		<span aria-hidden="true">&times;</span>
+	        	</button>
+	      	</div>
+	      	<div class="modal-body">
+	      		<h4 class="text-center mt-2 mb-4">
+	        		      <i class="fas fa-star star-light submit_star mr-1" id="submit_star_1" data-rating="1"></i>
+                    <i class="fas fa-star star-light submit_star mr-1" id="submit_star_2" data-rating="2"></i>
+                    <i class="fas fa-star star-light submit_star mr-1" id="submit_star_3" data-rating="3"></i>
+                    <i class="fas fa-star star-light submit_star mr-1" id="submit_star_4" data-rating="4"></i>
+                    <i class="fas fa-star star-light submit_star mr-1" id="submit_star_5" data-rating="5"></i>
+	        	</h4>
+	        	<div class="form-group">
+	        		<input type="text" name="user_name" id="user_name" class="form-control" placeholder="Enter Your Name" />
+	        	</div>
+	        	<div class="form-group">
+	        		<textarea name="user_review" id="user_review" class="form-control" placeholder="Type Review Here"></textarea>
+	        	</div>
+	        	<div class="form-group text-center mt-4">
+	        		<button type="button" class="btn btn-primary" id="save_review">Submit</button>
+	        	</div>
+	      	</div>
+    	</div>
+  	</div>
+</div>
+
+<style>
+.progress-label-left
+{
+    float: left;
+    margin-right: 0.5em;
+    line-height: 1em;
+}
+.progress-label-right
+{
+    float: right;
+    margin-left: 0.3em;
+    line-height: 1em;
+}
+.star-light
+{
+	color:#e9ecef;
+}
+</style>
