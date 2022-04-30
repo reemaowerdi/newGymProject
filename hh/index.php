@@ -205,7 +205,8 @@
         <br>
         <div id="myBtnContainer">
 <form method="POST">
-          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+
+          <input class="btn active" type="submit" name="all" value="Show all"/>
           <input class="btn" type="submit" name="north" value="north"/>
           <input class="btn" type="submit" name="south" value="shoth"/>
          <input class="btn" type="submit" name="west" value="west"/>
@@ -229,9 +230,115 @@
         if(!$db) {
           exit("connection string failed");
         }
-            $q ='select * from gym_info';
+            $q ='select * from gym_info WHERE loc="north"';
         $run = mysqli_query($db, $q);
-        if(isset($_POST['north'])&& $_POST ["loc"]=="north"){
+        if(isset($_POST['north'])){
+        while($rec = mysqli_fetch_array($run)) {
+
+        echo
+        '
+          <div class="column">
+        <div class="content">
+        <form method ="get">
+                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                    <p class="table-name">'.$rec["name"].' </p>
+                         <h2> Rating:</h2>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+
+                    </form>
+        </div></div>';}}
+        ?>
+
+        <?php
+        global $db;
+        $server = 'localhost';
+        $user = 'root';
+        $pass = 'root';
+        $dbname = 'doit';
+        $db = mysqli_connect($server,$user,$pass,$dbname);
+        if(!$db) {
+          exit("connection string failed");
+        }
+            $q ='select * from gym_info WHERE loc="south"';
+        $run = mysqli_query($db, $q);
+        if(isset($_POST['south'])){
+        while($rec = mysqli_fetch_array($run)) {
+
+        echo
+        '
+          <div class="column">
+        <div class="content">
+        <form method ="get">
+                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                    <p class="table-name">'.$rec["name"].' </p>
+                         <h2> Rating:</h2>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+
+                    </form>
+        </div></div>';}}
+        ?>
+
+        <?php
+        global $db;
+        $server = 'localhost';
+        $user = 'root';
+        $pass = 'root';
+        $dbname = 'doit';
+        $db = mysqli_connect($server,$user,$pass,$dbname);
+        if(!$db) {
+          exit("connection string failed");
+        }
+            $q ='select * from gym_info WHERE loc="west"';
+        $run = mysqli_query($db, $q);
+        if(isset($_POST['west'])){
+        while($rec = mysqli_fetch_array($run)) {
+
+        echo
+        '
+          <div class="column">
+        <div class="content">
+        <form method ="get">
+                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                    <p class="table-name">'.$rec["name"].' </p>
+                         <h2> Rating:</h2>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+
+                    </form>
+        </div></div>';}}
+        ?>
+
+
+        <?php
+        global $db;
+        $server = 'localhost';
+        $user = 'root';
+        $pass = 'root';
+        $dbname = 'doit';
+        $db = mysqli_connect($server,$user,$pass,$dbname);
+        if(!$db) {
+          exit("connection string failed");
+        }
+            $q ='select * from gym_info WHERE loc="east"';
+        $run = mysqli_query($db, $q);
+        if(isset($_POST['east'])){
         while($rec = mysqli_fetch_array($run)) {
 
         echo
