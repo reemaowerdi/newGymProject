@@ -1,5 +1,4 @@
 <?php
-function review_ratings ($id){
 
 //submit_rating.php
 
@@ -15,25 +14,21 @@ if(isset($_POST["rating_data"]))
 		':user_name'		=>	$_POST["user_name"],
 		':user_rating'		=>	$_POST["rating_data"],
 		':user_review'		=>	$_POST["user_review"],
-		':datetime'			=>	time(),
-		':gymID'            =>  $id
+		':datetime'			=>	time()
 	);
 
 	$query = "
 	INSERT INTO rev
-	(gym_id,user_name,user_rating,user_review,datetime)
-	VALUES (:gymID,:user_name, :user_rating, :user_review, :datetime)";
+	(user_name, user_rating, user_review, datetime)
+	VALUES (:user_name, :user_rating, :user_review, :datetime)";
 
 	$statement = $connect->prepare($query);
 
 	$statement->execute($data);
 
 	echo "Your Review & Rating Successfully Submitted";
-	
 
 }
-
-
 
 if(isset($_POST["action"]))
 {
@@ -47,18 +42,13 @@ if(isset($_POST["action"]))
 	$total_user_rating = 0;
 	$review_content = array();
 
-	$query = '
-  SELECT *
-  FROM rev
-  WHERE gym_id = '.$id.'
-	';
+	$query = "
+	SELECT * FROM rev
+	ORDER BY review_id DESC
+	";
+
 	$result = $connect->query($query, PDO::FETCH_ASSOC);
-if ($result){
-  echo "ok";
-}
-else {
-  echo "failed";
-}
+
 	foreach($result as $row)
 	{
 		$review_content[] = array(
@@ -115,5 +105,5 @@ else {
 	echo json_encode($output);
 
 }
-}
+
 ?>

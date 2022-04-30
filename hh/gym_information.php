@@ -1,6 +1,4 @@
-<?php
-require("connection.php");
-require("submit_rating.php") ?>
+<?php require("connection.php") ?>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -735,7 +733,7 @@ while ($row=mysqli_fetch_array($run)) {
       </div>
     </div>
   </div>
-  <div class="mt-5" id="review_content" ></div>
+  <div class="mt-5" id="review_content"></div>
   </div>
 
 
@@ -1001,7 +999,7 @@ while ($row=mysqli_fetch_array($run)) {
 	        		<textarea name="user_review" id="user_review" class="form-control" placeholder="Type Review Here"></textarea>
 	        	</div>
 	        	<div class="form-group text-center mt-4">
-	        		<button type="button" class="btn btn-primary" id="save_review">Submit<?php review_ratings($_GET['id']);?></button>
+	        		<button type="button" class="btn btn-primary" id="save_review">Submit</button>
 	        	</div>
 	      	</div>
     	</div>

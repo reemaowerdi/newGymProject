@@ -239,7 +239,9 @@
             while($rec = mysqli_fetch_array($run)) {
 
 echo
-'<div class="content">
+'
+  <div class="column">
+<div class="content">
 <form method ="get">
             <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
             <p class="table-name">'.$rec["name"].' </p>
@@ -251,8 +253,9 @@ echo
   <span class="fa fa-star"></span>
       <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
 <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+
             </form>
-</div>';}
+</div></div>';}
 ?>
 </div>
         <!-- END GRID -->
