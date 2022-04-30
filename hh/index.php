@@ -204,22 +204,55 @@
         <h2 style="color:#6D089D">Search:</h2>
         <br>
         <div id="myBtnContainer">
-
+<form method="POST">
           <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-          <button class="btn" onclick="filterSelection('north')"> north</button>
-          <button class="btn" onclick="filterSelection('West')"> West</button>
-          <button class="btn" onclick="filterSelection('east')"> east</button>
-          <button class="btn" onclick="filterSelection('south')"> south</button>
+          <input class="btn" type="submit" name="north" value="north"/>
+          <input class="btn" type="submit" name="south" value="shoth"/>
+         <input class="btn" type="submit" name="west" value="west"/>
+         <input class="btn" type="submit" name="east" value="east"/>
+
+        </form>
          <button class="sort">Top Rated</button>
+
         </div>
         <hr>
 
         <!-- Portfolio Gallery Grid -->
 
+        <?php
+        global $db;
+        $server = 'localhost';
+        $user = 'root';
+        $pass = 'root';
+        $dbname = 'doit';
+        $db = mysqli_connect($server,$user,$pass,$dbname);
+        if(!$db) {
+          exit("connection string failed");
+        }
+            $q ='select * from gym_info';
+        $run = mysqli_query($db, $q);
+        if(isset($_POST['north'])&& $_POST ["loc"]=="north"){
+        while($rec = mysqli_fetch_array($run)) {
 
+        echo
+        '
+          <div class="column">
+        <div class="content">
+        <form method ="get">
+                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                    <p class="table-name">'.$rec["name"].' </p>
+                         <h2> Rating:</h2>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
-
-
+                    </form>
+        </div></div>';}}
+        ?>
 
 
 <div class="row">
@@ -307,7 +340,7 @@ echo
               this.className += " active";
             });
           }
-          </script>
+        </script>
 
 <br> <br> <br>
 <div id="about">
