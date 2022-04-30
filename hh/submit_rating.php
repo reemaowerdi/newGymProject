@@ -1,5 +1,4 @@
 <?php
-function review_ratings ($id){
 
 //submit_rating.php
 
@@ -15,25 +14,24 @@ if(isset($_POST["rating_data"]))
 		':user_name'		=>	$_POST["user_name"],
 		':user_rating'		=>	$_POST["rating_data"],
 		':user_review'		=>	$_POST["user_review"],
-		':datetime'			=>	time(),
-		':gymID'            =>  $id
+		':datetime'			=>	time()
 	);
 
 	$query = "
 	INSERT INTO rev
-	(gym_id,user_name,user_rating,user_review,datetime)
-	VALUES (:gymID,:user_name, :user_rating, :user_review, :datetime)";
+	(user_name, user_rating, user_review, datetime)
+	VALUES (:user_name, :user_rating, :user_review, :datetime)";
 
 	$statement = $connect->prepare($query);
 
 	$statement->execute($data);
 
 	echo "Your Review & Rating Successfully Submitted";
-	
 
 }
-
-
+?>
+<?php 
+function review_ratings ($id){
 
 if(isset($_POST["action"]))
 {
@@ -52,6 +50,7 @@ if(isset($_POST["action"]))
   FROM rev
   WHERE gym_id = '.$id.'
 	';
+
 	$result = $connect->query($query, PDO::FETCH_ASSOC);
 if ($result){
   echo "ok";
