@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<?php
+require("connection.php");
+require("submit_rating.php") ?>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -390,7 +392,7 @@
 </head>
 <body>
 
-    <!-------header ------>
+    <!---header ------>
     <header>
 
         <style>
@@ -463,20 +465,20 @@
             }
         </style>
         <nav class="topnav">
+            <img
+          class="logo"
+          src="images/logo3.png"
+          alt="restaurants logo"
+        />
 
-            <img class="logo"
-                 src="images/logo3.png"
-                 alt="restaurants logo" />
+
             <div class="links">
-                <a href="home.html">HOME</a>
-                <a href="menu.html">About-US</a>
-                <a href="menu.html">Contact-Us</a>
+              <a href="index.php">HOME</a>
+
+              <a href="#footer">Contact-Us</a>
             </div>
-            <form class="search-form">
-                <input type="text" placeholder="Search.." />
-                <button>search</button>
-            </form>
-        </nav>
+
+          </nav>
     </header>
 
 
@@ -489,13 +491,23 @@
                     <h2>overview</h2>
                     <h2>build your body &</h2>
                     <h1>shape <span>yourself</span> </h1>
-                    <p>professional laides gym in riyadh </br> call us: 0554960222</p>
-                    <a href="https://www.diva.sa">subscribe</a>
+                    <p>
+          <?php
+          $gymId=$_GET['id'];
+          $q2 ='select * from gym_info where id='.$gymId.'';
+$run = mysqli_query($db, $q2);
+while ($row=mysqli_fetch_array($run)) {
+  echo $row['description'];
+
+
+          ?>
+                    </p>
+                    <a href="<?php echo $row['subscribe'] ;?>">subscribe</a>
                 </div>
 
             </div>
             <div class="inner-home">
-                <img src="images/diva.png" alt="">
+                <img src="<?php echo $row['photo'];?>" alt="">
             </div>
         </div>
     </div>
@@ -558,29 +570,27 @@
             <div class="ourstory-inner">
                 <div class="top-story-content">
                     <h2>address</h2>
-                    <p>King Abdullah Branch Road, Al Mughrizat, Riyadh, Saudi Arabia</p>                </div>
-
-                <div class="mapouter">
-                    <div class="gmap_canvas">
-                        <iframe width="600" height="500" id="gmap_canvas" src="https://www.google.com/maps?q=Diva+Fitness+AlMughrizat&ftid=0x3e2f0271c8377f71:0x6c8f0f4ef05b2767&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/">divi discount</a><br>
-                        <style>
-                            .mapouter {
-                                position: relative;
-                                text-align: right;
-                                height: 500px;
-                                width: 600px;
-                            }
-                        </style><a href="https://www.embedgooglemap.net">google maps iframe embed</a>
-                        <style>
-                            .gmap_canvas {
-                                overflow: hidden;
-                                background: none !important;
-                                height: 500px;
-                                width: 600px;
-                            }
-                        </style>
-                    </div>
+                    <p>
+<?php echo $row['loc']; ?>                    </p>
                 </div>
+
+                <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="<?php echo $row['location'];}?>" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 500px;
+                        width: 600px;
+                    }
+                </style><a href="https://www.embedgooglemap.net">google maps on website</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 500px;
+                        width: 600px;
+                    }
+                </style></div></div>
 
             </div>
         </div>
@@ -725,15 +735,11 @@
       </div>
     </div>
   </div>
-  <div class="mt-5" id="review_content"></div>
+  <div class="mt-5" id="review_content" ></div>
   </div>
 
 
-
-
-
-
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>var swiper = new Swiper(".mySwiper", {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -772,6 +778,92 @@
 
             }
         });</script>
+<style>
+    footer{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  height: auto;
+  width: 100vw;
+  padding-top: 40px;
+  color: #fff;
+
+}
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+}
+.socials{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+  margin: 0 10px;
+}
+
+.socials a{
+  text-decoration: none;
+  color: #fff;
+  border: 1.1px solid white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.socials a i{
+  font-size: 1.1rem;
+  width: 20px;
+  transition: color .4s ease;
+}
+
+.socials a:hover i{
+  color: aqua;
+}
+.footer-bottom{
+  background: #000;
+  width: 100vw;
+  padding: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+.footer-bottom p{
+  float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom p a{
+ color:#44bae8;
+ font-size: 16px;
+ text-decoration: none;
+}
+.footer-bottom span{
+   text-transform: uppercase;
+   opacity: .4;
+   font-weight: 200;
+}
+
+</style>
 
 <style>
     footer{
@@ -859,6 +951,7 @@
 }
 
 </style>
+
 <footer id="footer">
 
     <div class="footer-content">
@@ -878,9 +971,9 @@
     </div>
 
 </footer>
+
 </body>
 </html>
-
 
 <!--new code review-->
 
