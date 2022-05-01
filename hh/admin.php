@@ -266,7 +266,7 @@
 </div>
         <hr>
         <br>
-        <div class="ico-btn" id='plus-btn'>
+        <div class="ico-btn" id='plus-btn' onclick=window.location.href="AddForm.php">
     <span class="ico-btn__plus"></span>
   </div>
 
