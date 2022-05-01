@@ -495,7 +495,7 @@
           $q2 ='select * from gym_info where id='.$gymId.'';
 $run = mysqli_query($db, $q2);
 while ($row=mysqli_fetch_array($run)) {
-  echo $row['description'];
+  echo $row['name'].$row['description'];
 
 
           ?>
@@ -998,6 +998,7 @@ while ($row=mysqli_fetch_array($run)) {
 	        	<div class="form-group">
 	        		<textarea name="user_review" id="user_review" class="form-control" placeholder="Type Review Here"></textarea>
 	        	</div>
+            <p name= <?php $_GET['id']; ?> ></p>
 	        	<div class="form-group text-center mt-4">
 	        		<button type="button" class="btn btn-primary" id="save_review">Submit</button>
 	        	</div>
