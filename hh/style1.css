@@ -56,3 +56,47 @@ input[type=text], select, textarea, input[type=file], input[type=password] {
   border-radius: 4px;
 }
 
+ul {
+	width: auto;
+	height: auto ;
+	margin-left: 200px;
+}
+
+.add{
+margin:10px ;
+}
+
+textarea{
+	width: 510px;
+	height: 150px;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background-color: #f8f8f8;
+	font-size: 16px;
+	resize: none;
+}
+
+#submitAddition{
+	background-color: #B680CF;
+	border-radius: 12px;
+	text-align: center;
+	font-size: 1em;
+	position: relative;
+	float: left ;
+	width: 100px;
+	height: 50px;
+}
+
+
+#ok {
+
+	padding: 10px 10px;
+	width: 50%;
+	background: #16B08A;
+	color: rgb(11, 8, 8);
+	border-radius: 20px;
+    text-align: center;
+    margin: 100px auto;
+}
