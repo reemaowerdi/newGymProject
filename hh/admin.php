@@ -103,11 +103,11 @@
       @media only screen and (max-width: 300px) {
         .prev, .next,.text {font-size: 11px}
       }
-      
+
 
 #plus-btn{
   color: black;
-  background-color: #FFA6E0; 
+  background-color: #FFA6E0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +121,7 @@
   height: 30px;
   cursor: pointer;
   transition: all .20s cubic-bezier(0.4, 0.0, 0.2, 1);
-  border:  2px solid; 
+  border:  2px solid;
   border-radius: 50%;
 }
 
@@ -141,7 +141,7 @@
   background: currentColor;
   border-radius: 2px;
   transition: all .25s cubic-bezier(0.4, 0.0, 0.2, 1);
-  
+
   transform: rotate(90deg);
 }
 
@@ -245,9 +245,7 @@
 
     <main>
       <div class="main">
-      <div class="ico-btn" id='plus-btn'>
-  <span class="ico-btn__plus"></span>
-</div><br><br>
+
 
 
 
@@ -265,11 +263,15 @@
         </form>
          <button class="sort">Top Rated</button>
 
-      
+</div>
         <hr>
- 
+        <br>
+        <div class="ico-btn" id='plus-btn'>
+    <span class="ico-btn__plus"></span>
+  </div>
+
         <!-- Portfolio Gallery Grid -->
-     
+
         <?php
         global $db;
         $server = 'localhost';
@@ -301,7 +303,7 @@
               <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
 
               <i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i>
-              <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i> 
+              <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i>
                     </form>
         </div></div>';}}
         ?>
@@ -336,7 +338,7 @@
           <span class="fa fa-star"></span>
               <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
 
-              <a href="gym_information.php?id='.$rec['id'].'"> 
+              <a href="gym_information.php?id='.$rec['id'].'">
               <i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i>
               <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i> </a>
                    </form>
@@ -373,8 +375,8 @@
           <span class="fa fa-star"></span>
               <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
 
-              
-<a href="gym_information.php?id='.$rec['id'].'"> 
+
+<a href="gym_information.php?id='.$rec['id'].'">
 <i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i>
 <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i> </a>
      </form>
@@ -412,8 +414,8 @@
           <span class="fa fa-star"></span>
               <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
 
-            
-<a href="gym_information.php?id='.$rec['id'].'"> 
+
+<a href="gym_information.php?id='.$rec['id'].'">
 <i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i>
 <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i> </a>
  </form>
@@ -434,7 +436,7 @@
           	}
                 $q ='select * from gym_info';
           $run = mysqli_query($db, $q);
-
+           if(isset($_POST['all'])){
             while($rec = mysqli_fetch_array($run)) {
 
 echo
@@ -451,13 +453,13 @@ echo
   <span class="fa fa-star"></span>
   <span class="fa fa-star"></span>
       <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-      
-<a href="gym_information.php?id='.$rec['id'].'"> 
+
+<a href="gym_information.php?id='.$rec['id'].'">
 <i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i>
 <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i> </a>
 
             </form>
-</div></div>';}
+</div></div>';}}
 ?>
 </div>
         <!-- END GRID -->
