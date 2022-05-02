@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Apr 30, 2022 at 10:53 PM
--- Server version: 5.7.24
--- PHP Version: 8.0.1
+-- Host: localhost:8889
+-- Generation Time: May 02, 2022 at 01:22 AM
+-- Server version: 5.7.34
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,17 +60,9 @@ CREATE TABLE `rev` (
   `user_name` varchar(20) NOT NULL,
   `user_rating` int(6) NOT NULL,
   `user_review` text NOT NULL,
-  `datetime` varchar(30) NOT NULL
+  `datetime` varchar(30) NOT NULL,
+  `gym_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `rev`
---
-
-INSERT INTO `rev` (`review_id`, `user_name`, `user_rating`, `user_review`, `datetime`) VALUES
-(1, 'a', 3, 'aaa', '1651199784'),
-(2, 'fahda', 5, 'nice gym', '1651201691'),
-(3, 'w', 2, 'not realy   good', '1651264397');
 
 --
 -- Indexes for dumped tables
@@ -86,7 +78,8 @@ ALTER TABLE `gym_info`
 -- Indexes for table `rev`
 --
 ALTER TABLE `rev`
-  ADD PRIMARY KEY (`review_id`);
+  ADD PRIMARY KEY (`review_id`),
+  ADD KEY `gym_id` (`gym_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -103,6 +96,16 @@ ALTER TABLE `gym_info`
 --
 ALTER TABLE `rev`
   MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `rev`
+--
+ALTER TABLE `rev`
+  ADD CONSTRAINT `rev_ibfk_1` FOREIGN KEY (`gym_id`) REFERENCES `gym_info` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
