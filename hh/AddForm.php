@@ -1,7 +1,7 @@
 
 
 
-            <?php 
+            <?php
             include("connection.php");
             if (isset($_POST['submitAddition'])){
                 $name=$_POST['name'];
@@ -11,7 +11,7 @@
                 $locurl=$_POST['LocURL'];
                 $loc=$_POST['Location'];
 
-                $query="INSERT into gym_info (name,description,subscribe,photo,location,loc) VALUES 
+                $query="INSERT into gym_info (name,description,subscribe,photo,location,loc) VALUES
                 ('$name','$des','$sub','$logo','$locurl','$loc')";
                 if ($p=mysqli_query($db,$query)){
                     echo  '<p id="ok">Gym has been added successfully</p>';
@@ -20,7 +20,7 @@
                     echo '<p id="ok" style="background:red;">Failed</p>';
                 }
                       }
-				
+
 			?>
 <html>
 <head>
@@ -29,10 +29,12 @@
 <link href="style1.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
 <table id="content" cellpadding="10">
 <tr style="border-radius: 20px;">
 	<td valign="middle" colspan="2" style="height: 70px;background: #C4C2C2">
     <form name="myform" method='post'>
+      <h1 style="color:#6D089D; text-align:center;">Add New Gym</h1> <br>
             <ul>
             <label for="gym_name" class='add'>Gym Name:</label><br>
             <input type="text" name='Name' class='add'><br>
