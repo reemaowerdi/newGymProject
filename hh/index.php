@@ -375,7 +375,7 @@
           	}
                 $q ='select * from gym_info';
           $run = mysqli_query($db, $q);
-           if(isset($_POST['all'])){
+           
             while($rec = mysqli_fetch_array($run)) {
 
 echo
@@ -395,7 +395,7 @@ echo
 <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
             </form>
-</div></div>';}}
+</div></div>';}
 ?>
 </div>
         <!-- END GRID -->

@@ -436,7 +436,7 @@
           	}
                 $q ='select * from gym_info';
           $run = mysqli_query($db, $q);
-           if(isset($_POST['all'])){
+           
             while($rec = mysqli_fetch_array($run)) {
 
 echo
@@ -459,7 +459,7 @@ echo
 <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i> </a>
 
             </form>
-</div></div>';}}
+</div></div>';}
 ?>
 </div>
         <!-- END GRID -->
