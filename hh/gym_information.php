@@ -495,7 +495,7 @@
           $q2 ='select * from gym_info where id='.$gymId.'';
 $run = mysqli_query($db, $q2);
 while ($row=mysqli_fetch_array($run)) {
-  echo $row['description'];
+  echo $row['name'].$row['description'];
 
 
           ?>

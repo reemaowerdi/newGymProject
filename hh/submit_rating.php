@@ -3,9 +3,13 @@
 //submit_rating.php
 
    //$connect = mysqli_connect("localhost", "root", "root", "review_table");
+    $gym_id=$_GET['id'];
    $connect = new PDO("mysql:host=localhost;dbname=doit", "root", "root");
                 $error =mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
+
+
+  //$id ='select id from gym_info where id='.$gymId.'';
 
 if(isset($_POST["rating_data"]))
 {
@@ -14,13 +18,20 @@ if(isset($_POST["rating_data"]))
 		':user_name'		=>	$_POST["user_name"],
 		':user_rating'		=>	$_POST["rating_data"],
 		':user_review'		=>	$_POST["user_review"],
-		':datetime'			=>	time()
+		':datetime'			=>	time(),
+    ':gym_id' =>   $gym_id
+
+
 	);
 
-	$query = "
+	/*$query = "
 	INSERT INTO rev
 	(user_name, user_rating, user_review, datetime)
-	VALUES (:user_name, :user_rating, :user_review, :datetime)";
+	VALUES (:user_name, :user_rating, :user_review, :datetime)";*/
+  $query = "
+  INSERT INTO rev
+	(user_name, user_rating, user_review, datetime,gym_id)
+	VALUES (:user_name, :user_rating, :user_review, :datetime,:gym_id)";
 
 	$statement = $connect->prepare($query);
 
@@ -44,9 +55,10 @@ if(isset($_POST["action"]))
 
 	$query = "
 	SELECT * FROM rev
-	ORDER BY review_id DESC
-	";
 
+  WHERE gym_id='$gym_id'
+	";
+//  WHERE gym_id='$id'
 	$result = $connect->query($query, PDO::FETCH_ASSOC);
 
 	foreach($result as $row)
@@ -87,7 +99,7 @@ if(isset($_POST["action"]))
 
 		$total_user_rating = $total_user_rating + $row["user_rating"];
 
-	}
+	}//foreach
 
 	$average_rating = $total_user_rating / $total_review;
 
@@ -104,6 +116,6 @@ if(isset($_POST["action"]))
 
 	echo json_encode($output);
 
-}
+}//if(isset($_POST["action"]))
 
 ?>
