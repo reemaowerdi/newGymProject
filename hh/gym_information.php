@@ -492,32 +492,7 @@
             <div class="inner-home">
                 <div class="home-content">
 
-          <form method="GET">
-
-                    <button class="open-button" onclick="window.location.href='gym_information.php?Delete_id=<?php echo $id; ?>';">Delete gym</button>
-
-                  </form>  <br> <br>
-
-                  <?php
-                  global $db;
-                  $server = 'localhost';
-                  $user = 'root';
-                  $pass = 'root';
-                  $dbname = 'doit';
-                  $db = mysqli_connect($server,$user,$pass,$dbname);
-                  if(!$db) {
-                    exit("connection string failed");
-                  }
-
-                  if(isset($_GET['Delete_id']) && !empty($_GET['Delete_id'])){
-
-	$ID_REMOVE = mysqli_real_escape_string($db,$_GET['Delete_id']);
-	$remove_ = mysqli_query($db,"DELETE FROM `gym_info` WHERE id='$ID_REMOVE'");
-	if($remove_){
-		$SUCCESS_MSG = "gym Has Been Removed Successfully";
-	}
-}
-                  ?>
+        
 
                     <h2>overview</h2>
                     <h2>build your body &</h2>

@@ -261,7 +261,62 @@
          <input class="btn" type="submit" name="east" value="east"/>
 
         </form>
-         <button class="sort">Top Rated</button>
+
+         <form method ="get" >
+            <?php
+                $connection = mysqli_connect("localhost","root","root","doit");
+
+                $error = mysqli_connect_error();
+
+                if ($error != null)
+                {
+                    echo "<p> Could not connect to the database. </p>";
+                }
+                else
+                {
+                    $sql = "SELECT * FROM gym_info";
+                    $result = mysqli_query($connection, $sql);
+
+                    echo " <select class=sort name='delete'>";
+                    while($row = mysqli_fetch_assoc($result))
+                    {
+                        echo "<option value=".$row['id'].">".$row['name']."</option>";
+                    }
+                    echo "</select> <br/<br/>";
+                    echo "<input type='submit' value='DELETE' style=float:right;>";
+                }
+            ?>
+
+        </form>
+
+
+            <?php
+                if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD']=="POST")
+                {
+                    $id = $_POST['id'];
+
+                    $connection = mysqli_connect("localhost","root","root","doit");
+
+                    $error = mysqli_connect_error();
+
+                    if ($error != null)
+                    {
+                        echo "<p> Could not connect to the database. </p>";
+                    }
+                    else
+                    {
+                      $sql = "DELETE FROM gym_info WHERE id=".$id;
+                          $result = mysqli_query($connection, $sql);
+                          if ($result) {
+                            echo "<script>alert('DONE');</script>";
+
+                       }
+
+                    }
+                }
+            ?>
+
+
 
 </div>
         <hr>
@@ -436,7 +491,7 @@
           	}
                 $q ='select * from gym_info';
           $run = mysqli_query($db, $q);
-           
+
             while($rec = mysqli_fetch_array($run)) {
 
 echo
