@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: May 02, 2022 at 01:22 AM
--- Server version: 5.7.34
--- PHP Version: 8.0.8
+-- Host: localhost:3306
+-- Generation Time: May 13, 2022 at 08:30 PM
+-- Server version: 5.7.24
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -65,6 +65,13 @@ CREATE TABLE `rev` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `rev`
+--
+
+INSERT INTO `rev` (`review_id`, `user_name`, `user_rating`, `user_review`, `datetime`, `gym_id`) VALUES
+(4, 'fahda', 3, 'nice gym', '2022-05-13 23:29:34', 1);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -95,7 +102,7 @@ ALTER TABLE `gym_info`
 -- AUTO_INCREMENT for table `rev`
 --
 ALTER TABLE `rev`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
