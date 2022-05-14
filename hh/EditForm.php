@@ -1,7 +1,7 @@
 <?php
             include("connection.php");
             if (isset($_POST['submitAddition'])){
-                $name=$_POST['name'];
+                $name=$_POST['Name'];
                 $des=$_POST['description'];
                 $sub=$_POST['URL'];
                 $logo=$_POST['logo'];
