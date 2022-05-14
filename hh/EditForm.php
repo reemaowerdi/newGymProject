@@ -7,8 +7,8 @@
                 $logo=$_POST['logo'];
                 $locurl=$_POST['LocURL'];
                 $loc=$_POST['Location'];
-                 $id=$_GET["id"];
-                $query=$sql = "UPDATE gym_info WHERE id=$id";
+                 $id1=$_GET["id"];
+                $query=$sql = "UPDATE gym_info SET name='$name' , description='$des' , subscribe='$sub', photo='$logo' , location='$locurl' ,loc='  $loc' WHERE id='$id1'";
                 if ($p=mysqli_query($db,$query)){
                     echo  '<p id="ok">It has been successfully modifiedy</p>';
                 }
@@ -50,7 +50,8 @@
     <form name="myform" method='post'>
       <h1 style="color:#6D089D; text-align:center;">Edit Gym</h1> <br>
             <ul>
-            <label for="gym_name" class='add'>Gym Name:</label><br>
+            
+              <label for="gym_name" class='add'>Gym Name:</label><br>
             <input type="text" name='Name' class='add'><br>
             <label for="gym_description"class='add' >Gym description:</label><br>
             <textarea name='description' placeholder="Enter gym description here ....." class='add' required rows="7"></textarea><br> <!--hieeght and width-->

@@ -30,6 +30,15 @@
 </head>
 <body>
 
+  <header>
+    <nav class="topnav">
+      <div class="links">
+        <a href="admin.php">HOME</a>
+
+      </div>
+
+    </nav>
+  </header>
 <table id="content" cellpadding="10">
 <tr style="border-radius: 20px;">
 	<td valign="middle" colspan="2" style="height: 70px;background: #C4C2C2">

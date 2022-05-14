@@ -516,7 +516,7 @@ echo '
 <a href="gym_information.php?id='.$rec['id'].'">
 <i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i></a>
 
-<a href="EditForm.php">
+<a href="EditForm.php?id='.$rec['id'].'">
 <i class="fa fa-edit" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i></a>
 
 
