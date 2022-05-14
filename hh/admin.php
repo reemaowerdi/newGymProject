@@ -2,8 +2,9 @@
 
 <html lang="en" class="default-theme">
   <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<?php include "connection.php"; ?>
     <style>
       .checked {
   color: orange;
@@ -264,16 +265,7 @@
 
          <form method ="get" >
             <?php
-                $connection = mysqli_connect("localhost","root","root","doit");
-
-                $error = mysqli_connect_error();
-
-                if ($error != null)
-                {
-                    echo "<p> Could not connect to the database. </p>";
-                }
-                else
-                {
+              
                     $sql = "SELECT * FROM gym_info";
                     $result = mysqli_query($connection, $sql);
 
@@ -283,28 +275,18 @@
                         echo "<option value=".$row['id'].">".$row['name']."</option>";
                     }
                     echo "</select> <br/<br/>";
-                    echo "<input type='submit' value='DELETE' style=float:right;>";
-                }
+                    echo "<input type='submit' name='delete' value='DELETE' style=float:right;>";
+                
             ?>
 
         </form>
 
 
             <?php
-                if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD']=="POST")
+                if (isset($_POST['delete']) && $_SERVER['REQUEST_METHOD']=="POST")
                 {
                     $id = $_POST['id'];
 
-                    $connection = mysqli_connect("localhost","root","root","doit");
-
-                    $error = mysqli_connect_error();
-
-                    if ($error != null)
-                    {
-                        echo "<p> Could not connect to the database. </p>";
-                    }
-                    else
-                    {
                       $sql = "DELETE FROM gym_info WHERE id=".$id;
                           $result = mysqli_query($connection, $sql);
                           if ($result) {
@@ -313,9 +295,22 @@
                        }
 
                     }
-                }
+                
             ?>
 
+<script>
+  function delete_Gym(gymID){
+alert('Gym deleted'+gymID);
+// flag = confirm("Are you sure you want to delete?","");
+// if (flag == true){
+// $.get("deleteScript.php",{id:gymID});
+// }
+
+
+//   }
+  }
+
+</script>
 
 
 </div>
@@ -327,6 +322,50 @@
 
         <!-- Portfolio Gallery Grid -->
 
+        <div class="row">
+            <?php
+            global $db;
+          	$server = 'localhost';
+          	$user = 'root';
+          	$pass = 'root';
+          	$dbname = 'doit';
+          	$db = mysqli_connect($server,$user,$pass,$dbname);
+          	if(!$db) {
+          		exit("connection string failed");
+          	}
+                $q ='select * from gym_info';
+          $run = mysqli_query($db, $q);
+
+            while($rec = mysqli_fetch_array($run)) {
+
+echo
+'
+  <div class="column">
+<div class="content">
+<form method ="get">
+            <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+            <p class="table-name">'.$rec["name"].' </p>
+                 <h2> Rating:</h2>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+      <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+
+
+
+
+<a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
+<a href="EditForm.php"><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
+
+
+
+            </form>
+</div></div>';}
+?>
+
+</div>
         <?php
         global $db;
         $server = 'localhost';
@@ -357,8 +396,8 @@
           <span class="fa fa-star"></span>
               <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
 
-              <i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i>
-              <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i>
+              <a href="deleteScript.php?id="'.$rec['id'].'"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
+              <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="EditGym.php"></i>
                     </form>
         </div></div>';}}
         ?>
@@ -478,78 +517,6 @@
         ?>
 
 
-<div class="row">
-            <?php
-            global $db;
-          	$server = 'localhost';
-          	$user = 'root';
-          	$pass = 'root';
-          	$dbname = 'doit';
-          	$db = mysqli_connect($server,$user,$pass,$dbname);
-          	if(!$db) {
-          		exit("connection string failed");
-          	}
-                $q ='select * from gym_info';
-          $run = mysqli_query($db, $q);
-
-            while($rec = mysqli_fetch_array($run)) {
-
-echo
-'
-  <div class="column">
-<div class="content">
-<form method ="get">
-            <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-            <p class="table-name">'.$rec["name"].' </p>
-                 <h2> Rating:</h2>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-      <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-
-'
-?>
-<?php
-echo '
-<a href="admin.php?Delete_id='.$rec['id'].'">
-<i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i></a>
-
-<a href="EditForm.php?id='.$rec['id'].'">
-<i class="fa fa-edit" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i></a>
-
-
-
-            </form>
-</div></div>';}
-?>
-
-<?php
-global $db;
-$server = 'localhost';
-$user = 'root';
-$pass = 'root';
-$dbname = 'doit';
-$db = mysqli_connect($server,$user,$pass,$dbname);
-if(!$db) {
-  exit("connection string failed");
-}
-
-if(isset($_GET['Delete_id'])){
-	$ID_REMOVE = mysqli_real_escape_string($db,$_GET['Delete_id']);
-	$remove_ = mysqli_query($db,"DELETE FROM `gym_info` WHERE id='$ID_REMOVE'");
-	if($remove_){
-		echo "<script>confirm('are you sure?');</script>";
-echo '<script>window.location.herf="admin.php";</script>';
-
-	}
-  
-}
-
-?>
-
-</div>
         <!-- END GRID -->
         </div>
 
