@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 13, 2022 at 08:30 PM
+-- Generation Time: May 14, 2022 at 10:47 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -69,7 +69,16 @@ CREATE TABLE `rev` (
 --
 
 INSERT INTO `rev` (`review_id`, `user_name`, `user_rating`, `user_review`, `datetime`, `gym_id`) VALUES
-(4, 'fahda', 3, 'nice gym', '2022-05-13 23:29:34', 1);
+(4, 'fahda', 3, 'Nice gym', '2022-05-14 21:22:41', 1),
+(5, 'kayan', 5, 'wow! I love it', '2022-05-14 21:26:49', 2),
+(6, 'm', 3, 'I like this gym', '2022-05-14 21:27:27', 2),
+(7, 'reema', 4, 'love it!', '2022-05-14 21:29:57', 1),
+(8, 'reema', 1, 'hh', '2022-05-14 21:33:35', 2),
+(9, 'reema', 1, 'jj', '2022-05-14 21:36:04', 1),
+(10, 'maha', 2, 'nice', '2022-05-14 21:37:06', 3),
+(11, 'nada', 3, 'good', '2022-05-14 21:37:43', 3),
+(12, 'wareef', 3, 'I like it', '2022-05-14 21:38:52', 4),
+(13, 'felwa', 1, 'Dislike', '2022-05-14 21:40:08', 4);
 
 --
 -- Indexes for dumped tables
@@ -102,7 +111,7 @@ ALTER TABLE `gym_info`
 -- AUTO_INCREMENT for table `rev`
 --
 ALTER TABLE `rev`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
