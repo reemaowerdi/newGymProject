@@ -6,6 +6,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php include "connection.php"; ?>
     <style>
+      :root {
+
+  --background-gradient: linear-gradient(30deg,  #f6f6fa 30%, #f7f7fa);
+  --gray: #34495e;
+  --darkgray: #a4677a;
+}
+
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+   flex:1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  position: relative;
+  display: flex;
+  width: 11em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #867e89;
+}
+
       .checked {
   color: orange;
 }
@@ -248,77 +297,35 @@
       <div class="main">
 
 
-
-
-        <h2 style="color:#6D089D">Search:</h2>
+      <div class="ico-btn" id='plus-btn' onclick=window.location.href="AddForm.php">
+    <span class="ico-btn__plus"></span>
+  </div>
+  <br>
+<hr>
+    
         <br>
         <div id="myBtnContainer">
-<form method="POST">
+<form method="GET">
+<div class="select">
+   <select name="GymLoc" id="GymLoc">
+<option value="1">Choose Location</option>
+<option type="submit" name="north" value="north">north</option>
+<option type="submit" name="south" value="south">south</option>
+<option type="submit" name="west" value="west">west</option>
+<option type="submit" name="east" value="east">east</option> 
 
-          <input class="btn active" type="submit" name="all" value="Show all"/>
-          <input class="btn" type="submit" name="north" value="north"/>
-          <input class="btn" type="submit" name="south" value="shoth"/>
-         <input class="btn" type="submit" name="west" value="west"/>
-         <input class="btn" type="submit" name="east" value="east"/>
-
-        </form>
-
-         <form method ="get" >
-            <?php
-              
-                    $sql = "SELECT * FROM gym_info";
-                    $result = mysqli_query($connection, $sql);
-
-                    echo " <select class=sort name='delete'>";
-                    while($row = mysqli_fetch_assoc($result))
-                    {
-                        echo "<option value=".$row['id'].">".$row['name']."</option>";
-                    }
-                    echo "</select> <br/<br/>";
-                    echo "<input type='submit' name='delete' value='DELETE' style=float:right;>";
-                
-            ?>
-
+</select>
+    </div>   
         </form>
 
 
-            <?php
-                if (isset($_POST['delete']) && $_SERVER['REQUEST_METHOD']=="POST")
-                {
-                    $id = $_POST['id'];
 
-                      $sql = "DELETE FROM gym_info WHERE id=".$id;
-                          $result = mysqli_query($connection, $sql);
-                          if ($result) {
-                            echo "<script>alert('DONE');</script>";
-
-                       }
-
-                    }
-                
-            ?>
-
-<script>
-  function delete_Gym(gymID){
-alert('Gym deleted'+gymID);
-// flag = confirm("Are you sure you want to delete?","");
-// if (flag == true){
-// $.get("deleteScript.php",{id:gymID});
-// }
-
-
-//   }
-  }
-
-</script>
 
 
 </div>
-        <hr>
+        
         <br>
-        <div class="ico-btn" id='plus-btn' onclick=window.location.href="AddForm.php">
-    <span class="ico-btn__plus"></span>
-  </div>
+       <hr>
 
         <!-- Portfolio Gallery Grid -->
 
@@ -356,7 +363,7 @@ echo
 
 
 
-<a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
+<a href="deleteScript.php?id='.$rec['id'].'"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
 <a href="EditForm.php"><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
 
 
