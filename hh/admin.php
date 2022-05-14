@@ -509,13 +509,22 @@ echo
   <span class="fa fa-star"></span>
       <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
 
+'
+?>
+<?php
+echo '
 <a href="gym_information.php?id='.$rec['id'].'">
-<i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i>
-<i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i> </a>
+<i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i></a>
+
+<a href="EditForm.php">
+<i class="fa fa-edit" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i></a>
+
+
 
             </form>
 </div></div>';}
 ?>
+
 </div>
         <!-- END GRID -->
         </div>
