@@ -513,7 +513,7 @@ echo
 ?>
 <?php
 echo '
-<a href="gym_information.php?id='.$rec['id'].'">
+<a href="admin.php?Delete_id='.$rec['id'].'">
 <i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i></a>
 
 <a href="EditForm.php?id='.$rec['id'].'">
@@ -523,6 +523,30 @@ echo '
 
             </form>
 </div></div>';}
+?>
+
+<?php
+global $db;
+$server = 'localhost';
+$user = 'root';
+$pass = 'root';
+$dbname = 'doit';
+$db = mysqli_connect($server,$user,$pass,$dbname);
+if(!$db) {
+  exit("connection string failed");
+}
+
+if(isset($_GET['Delete_id'])){
+	$ID_REMOVE = mysqli_real_escape_string($db,$_GET['Delete_id']);
+	$remove_ = mysqli_query($db,"DELETE FROM `gym_info` WHERE id='$ID_REMOVE'");
+	if($remove_){
+		echo "<script>confirm('are you sure?');</script>";
+echo '<script>window.location.herf="admin.php";</script>';
+
+	}
+  
+}
+
 ?>
 
 </div>
