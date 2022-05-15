@@ -130,7 +130,7 @@
 
 
         <div class="links">
-          <a href="home.html">HOME</a>
+          <a href="index.php">HOME</a>
           <a href="#about">About-US</a>
           <a href="#footer">Contact-Us</a>
         </div>
@@ -220,11 +220,11 @@
 
         <!-- Portfolio Gallery Grid -->
 
-        
+
 
 <div class="row">
             <?php
-			
+
             global $db;
           	$server = 'localhost';
           	$user = 'root';
@@ -242,7 +242,7 @@
 			}else {
 				$q ='select * from gym_info';
 			}
-                
+
           $run = mysqli_query($db, $q);
 
             while($rec = mysqli_fetch_array($run)) {
