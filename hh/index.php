@@ -258,10 +258,11 @@ color: #867e89;
 <div class="select">
 <select name="GymLoc" id="GymLoc">
 <option value="1">Choose Location</option>
-<option type="submit" name="north" value="north">north</option>
-<option type="submit" name="south" value="south">south</option>
-<option type="submit" name="west" value="west">west</option>
-<option type="submit" name="east" value="east">east</option> 
+<option  name="all" value="all">All</option>
+<option  name="north" value="north">north</option>
+<option  name="south" value="south">south</option>
+<option  name="west" value="west">west</option>
+<option  name="east" value="east">east</option> 
 
 </select>
 </div>   
