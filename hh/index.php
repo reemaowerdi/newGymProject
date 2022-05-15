@@ -5,55 +5,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-       :root {
-
---background-gradient: linear-gradient(30deg,  #f6f6fa 30%, #f7f7fa);
---gray: #34495e;
---darkgray: #a4677a;
-}
-
-select {
-/* Reset Select */
-appearance: none;
-outline: 0;
-border: 0;
-box-shadow: none;
-/* Personalize */
- flex:1;
-padding: 0 1em;
-color: #fff;
-background-color: var(--darkgray);
-background-image: none;
-cursor: pointer;
-}
-/* Remove IE arrow */
-select::-ms-expand {
-display: none;
-}
-/* Custom Select wrapper */
-.select {
-position: relative;
-display: flex;
-width: 11em;
-height: 3em;
-border-radius: .25em;
-overflow: hidden;
-}
-/* Arrow */
-.select::after {
-content: '\25BC';
-position: absolute;
-top: 0;
-right: 0;
-padding: 1em;
-transition: .25s all ease;
-pointer-events: none;
-}
-/* Transition */
-.select:hover::after {
-color: #867e89;
-}
-
       .checked {
   color: orange;
 }
@@ -179,7 +130,7 @@ color: #867e89;
 
 
         <div class="links">
-          <a href="index.php">HOME</a>
+          <a href="home.html">HOME</a>
           <a href="#about">About-US</a>
           <a href="#footer">Contact-Us</a>
         </div>
@@ -250,179 +201,30 @@ color: #867e89;
 
 
 
-      <hr>
-    
-    <br>
-    <div id="myBtnContainer">
-<form method="GET">
-<div class="select">
-<select name="GymLoc" id="GymLoc">
-<option value="1">Choose Location</option>
-<option  name="all" value="all">All</option>
-<option  name="north" value="north">north</option>
-<option  name="south" value="south">south</option>
-<option  name="west" value="west">west</option>
-<option  name="east" value="east">east</option> 
+        <h2 style="color:#6D089D">Search:</h2>
+        <br>
+        <div id="myBtnContainer">
+<form method="POST">
 
-</select>
-</div>   
-    </form>
+          <input class="btn active" type="submit" name="all" value="Show all"/>
+          <input class="btn" type="submit" name="north" value="north"/>
+          <input class="btn" type="submit" name="south" value="shoth"/>
+         <input class="btn" type="submit" name="west" value="west"/>
+         <input class="btn" type="submit" name="east" value="east"/>
 
+        </form>
+         <a class="sort btn active" style="float:right;" href="?Top_Rated=1">Top Rated</a>
 
-
-
-
-</div>
-    
-    <br>
-   <hr>
+        </div>
+        <hr>
 
         <!-- Portfolio Gallery Grid -->
 
-        <?php
-        global $db;
-        $server = 'localhost';
-        $user = 'root';
-        $pass = 'root';
-        $dbname = 'doit';
-        $db = mysqli_connect($server,$user,$pass,$dbname);
-        if(!$db) {
-          exit("connection string failed");
-        }
-            $q ='select * from gym_info WHERE loc="north"';
-        $run = mysqli_query($db, $q);
-        if(isset($_POST['north'])){
-        while($rec = mysqli_fetch_array($run)) {
-
-        echo
-        '
-          <div class="column">
-        <div class="content">
-        <form method ="get">
-                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                    <p class="table-name">'.$rec["name"].' </p>
-                         <h2> Rating:</h2>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
-
-                    </form>
-        </div></div>';}}
-        ?>
-
-        <?php
-        global $db;
-        $server = 'localhost';
-        $user = 'root';
-        $pass = 'root';
-        $dbname = 'doit';
-        $db = mysqli_connect($server,$user,$pass,$dbname);
-        if(!$db) {
-          exit("connection string failed");
-        }
-            $q ='select * from gym_info WHERE loc="south"';
-        $run = mysqli_query($db, $q);
-        if(isset($_POST['south'])){
-        while($rec = mysqli_fetch_array($run)) {
-
-        echo
-        '
-          <div class="column">
-        <div class="content">
-        <form method ="get">
-                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                    <p class="table-name">'.$rec["name"].' </p>
-                         <h2> Rating:</h2>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
-
-                    </form>
-        </div></div>';}}
-        ?>
-
-        <?php
-        global $db;
-        $server = 'localhost';
-        $user = 'root';
-        $pass = 'root';
-        $dbname = 'doit';
-        $db = mysqli_connect($server,$user,$pass,$dbname);
-        if(!$db) {
-          exit("connection string failed");
-        }
-            $q ='select * from gym_info WHERE loc="west"';
-        $run = mysqli_query($db, $q);
-        if(isset($_POST['west'])){
-        while($rec = mysqli_fetch_array($run)) {
-
-        echo
-        '
-          <div class="column">
-        <div class="content">
-        <form method ="get">
-                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                    <p class="table-name">'.$rec["name"].' </p>
-                         <h2> Rating:</h2>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
-
-                    </form>
-        </div></div>';}}
-        ?>
-
-
-        <?php
-        global $db;
-        $server = 'localhost';
-        $user = 'root';
-        $pass = 'root';
-        $dbname = 'doit';
-        $db = mysqli_connect($server,$user,$pass,$dbname);
-        if(!$db) {
-          exit("connection string failed");
-        }
-            $q ='select * from gym_info WHERE loc="east"';
-        $run = mysqli_query($db, $q);
-        if(isset($_POST['east'])){
-        while($rec = mysqli_fetch_array($run)) {
-
-        echo
-        '
-          <div class="column">
-        <div class="content">
-        <form method ="get">
-                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                    <p class="table-name">'.$rec["name"].' </p>
-                         <h2> Rating:</h2>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
-
-                    </form>
-        </div></div>';}}
-        ?>
-
+        
 
 <div class="row">
             <?php
+			
             global $db;
           	$server = 'localhost';
           	$user = 'root';
@@ -432,29 +234,94 @@ color: #867e89;
           	if(!$db) {
           		exit("connection string failed");
           	}
-                $q ='select * from gym_info';
+			if(isset($_GET['Top_Rated'])){
+				$orderBy = $_GET['Top_Rated'];
+			}
+			if(isset($orderBy) && $orderBy == 1){
+				$q = "SELECT * FROM `gym_info` p ORDER BY (SELECT AVG(user_rating) AS avg_rating FROM rev WHERE gym_id = p.id) DESC";
+			}else {
+				$q ='select * from gym_info';
+			}
+                
           $run = mysqli_query($db, $q);
-           
+
             while($rec = mysqli_fetch_array($run)) {
 
 echo
 '
-  <div class="column">
-<div class="content">
-<form method ="get">
-            <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-            <p class="table-name">'.$rec["name"].' </p>
-                 <h2> Rating:</h2>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-      <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-<a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+ <div class="column">
+        <div class="content">
+        <form method ="get">
+                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                    <p class="table-name">'.$rec["name"].' </p>
+                         ';
+             $gym_id = $rec['id'];
+                    $query1 = "SELECT Avg(user_rating) as sum1 FROM rev WHERE gym_id=$gym_id group by gym_id";
 
-            </form>
-</div></div>';}
+                    $result1 = mysqli_query($db, $query1);
+                    $row1 = mysqli_fetch_array($result1);
+
+                $returned = $row1['sum1'];
+                $avg = 0;
+                if($returned == NULL) {
+                    $avg = 0;
+                } else {
+                    $avg = $returned;
+                }
+                //echo "<p>returned 6: " . $avg . "</p>";
+                ?>
+       <h2> Rating: <?php echo $avg ?></h2>
+
+
+
+        <?php
+
+
+                    if($avg == 0) {
+                        echo '<i class="fa fa-star"></i><span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+          <span class="fa fa-star"></span>';
+                    } elseif($avg == 1) {
+                        echo '<i class="fa fa-star checked"></i><span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+          <span class="fa fa-star"></span>';
+                    } else if( $avg == 2) {
+                        echo '<i class="fa fa-star checked"></i><span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+          <span class="fa fa-star"></span>';
+                    }else if( $avg == 3) {
+                        echo '<i class="fa fa-star checked"></i><span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+          <span class="fa fa-star"></span>';
+                    }else if( $avg == 4) {
+                        echo '<i class="fa fa-star checked"></i><span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>';
+                    }else if( $avg == 5) {
+                         echo '<i class="fa fa-star checked"></i><span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>';
+                    }
+
+                  ?>
+
+    <?php
+
+            echo '
+              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+
+                    </form>
+        </div></div>';
+
+    }
+
 ?>
 </div>
         <!-- END GRID -->
