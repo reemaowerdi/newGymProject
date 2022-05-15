@@ -5,6 +5,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
+       :root {
+
+--background-gradient: linear-gradient(30deg,  #f6f6fa 30%, #f7f7fa);
+--gray: #34495e;
+--darkgray: #a4677a;
+}
+
+select {
+/* Reset Select */
+appearance: none;
+outline: 0;
+border: 0;
+box-shadow: none;
+/* Personalize */
+ flex:1;
+padding: 0 1em;
+color: #fff;
+background-color: var(--darkgray);
+background-image: none;
+cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+display: none;
+}
+/* Custom Select wrapper */
+.select {
+position: relative;
+display: flex;
+width: 11em;
+height: 3em;
+border-radius: .25em;
+overflow: hidden;
+}
+/* Arrow */
+.select::after {
+content: '\25BC';
+position: absolute;
+top: 0;
+right: 0;
+padding: 1em;
+transition: .25s all ease;
+pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+color: #867e89;
+}
+
       .checked {
   color: orange;
 }
@@ -130,7 +179,7 @@
 
 
         <div class="links">
-          <a href="home.html">HOME</a>
+          <a href="index.php">HOME</a>
           <a href="#about">About-US</a>
           <a href="#footer">Contact-Us</a>
         </div>
@@ -201,22 +250,31 @@
 
 
 
-        <h2 style="color:#6D089D">Search:</h2>
-        <br>
-        <div id="myBtnContainer">
-<form method="POST">
+      <hr>
+    
+    <br>
+    <div id="myBtnContainer">
+<form method="GET">
+<div class="select">
+<select name="GymLoc" id="GymLoc">
+<option value="1">Choose Location</option>
+<option type="submit" name="north" value="north">north</option>
+<option type="submit" name="south" value="south">south</option>
+<option type="submit" name="west" value="west">west</option>
+<option type="submit" name="east" value="east">east</option> 
 
-          <input class="btn active" type="submit" name="all" value="Show all"/>
-          <input class="btn" type="submit" name="north" value="north"/>
-          <input class="btn" type="submit" name="south" value="shoth"/>
-         <input class="btn" type="submit" name="west" value="west"/>
-         <input class="btn" type="submit" name="east" value="east"/>
+</select>
+</div>   
+    </form>
 
-        </form>
-         <button class="sort">Top Rated</button>
 
-        </div>
-        <hr>
+
+
+
+</div>
+    
+    <br>
+   <hr>
 
         <!-- Portfolio Gallery Grid -->
 
