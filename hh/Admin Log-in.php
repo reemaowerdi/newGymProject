@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -9,7 +10,7 @@
 <table id="content" cellpadding="10">
 <tr style="border-radius: 20px;">
 	<td valign="middle" colspan="2" style="height: 70px;background: #C4C2C2">
-	
+
 	</td>
 </tr>
 <tr>
@@ -23,7 +24,7 @@
 </tr>
 	<script type = "text/javascript">
       function validate() {
-      
+
          if( document.myForm.UserID.value == "" ) {
             alert( "Please provide User ID!" );
             document.myForm.UserID.focus() ;
@@ -40,11 +41,57 @@
 			   document.myForm.Password.focus() ;
 			   return false;
 		  }
-		 
+
          return( true );
       }
    //-->
 </script>
+<?php
+include("connection.php");
+if(isset($_POST['submit'])) {
+	$AdminID = $_POST['AdminID'];
+	$password = $_POST['password'];
+	 $q = "SELECT * FROM gym_info WHERE admin_num='$AdminID'";
+	$run = mysqli_query($db, $q);
+	$no = mysqli_num_rows($run);
+
+	if($no ==1) {
+		$rec = mysqli_fetch_array($run);
+		if(password_verify($password, $rec["password"]))
+		 {
+			$_SESSION['admin_id'] =  $rec['id'];
+			$_SESSION['admin_num'] =  $rec['admin_num'];
+
+		//	$_SESSION['firstname'] = $rec['first_name'];
+			//$_SESSION['lastname'] = $rec['last_name'];
+		//	$_SESSION['job_title'] = $rec['job_title'];
+
+//CREATE TABLE `gym_info` (
+//  `id` int(1) NOT NULL,
+ // `name` varchar(255) DEFAULT NULL,
+//  `admin_id` varchar(150) NOT NULL,
+//  `description` text,
+//  `subscribe` text,
+//  `photo` text,
+//  `location` text,
+//  `loc` varchar(255) DEFAULT NULL
+
+
+//) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+			echo '<META HTTP-EQUIV="Refresh" Content="1; URL="admin.php">';
+			exit();
+		} else {
+			echo '<p id="not">password is not correct</p>';
+		}
+	} else {
+		echo '<p id="not">username is not correct</p>';
+	}
+}
+?>
+
+
+
 <form action="Admin.html"  name = "myForm" onsubmit = "return(validate());">
 <tr>
 <td colspan="2" align="center">
@@ -74,10 +121,10 @@
 </td>
 	</tr>
 </form>
-	
+
 
 </table>
 
- 
+
 </body>
 </html>
